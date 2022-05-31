@@ -28,8 +28,10 @@ jobs:
     <<: *defaults
     steps:
       - checkout
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+      - restore_cache:
+          keys:
+            - "npm-packages"
+      - run: npm audit
 workflows:
   my-workflow:
     jobs:
