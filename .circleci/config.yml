@@ -5,7 +5,7 @@ defaults: &defaults
 version: 2.1
 
 jobs:
-  build
+  build:
     docker:
       - image: circleci/node:13.8.0
     steps:
